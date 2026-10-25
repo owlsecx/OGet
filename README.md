@@ -18,13 +18,18 @@
 
 ## 📌 Overview
 
-Secure Multi-File Downloader
+OGet is a secure multi-file downloader for authorised retrieval workflows. It supports URL lists, resume, integrity verification, proxies, and optional post-download encryption, with a defensive safety posture that favours dry-run and gated external fetches. Integrity reports help operators prove what was collected.
 
 ---
 
 ## ✨ Features
 
-- Authorised multi-URL downloader with dry-run, integrity reports, and resume — utility core tool
+- Multi-URL download from CLI args or a URL list file
+- Concurrent threads with resume for interrupted transfers
+- Integrity verification and download reporting
+- HTTP/SOCKS proxy and optional stealth mode
+- Optional encrypt-after-download and decrypt helpers
+- Background/daemon mode for long retrieval jobs
 
 ---
 
@@ -38,7 +43,10 @@ Secure Multi-File Downloader
 ## 🚀 Usage
 
 ```bash
-./OGet
+./OGet -u https://example.com/file.bin -o ./downloads
+./OGet -f urls.txt -t 8 --resume --verify
+./OGet -u https://example.com/a.bin -e -p socks5://127.0.0.1:9050
+./OGet --help
 ```
 
 ---
